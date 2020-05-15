@@ -3,7 +3,6 @@
 # place: Pudong Shanghai
 # time: 2020-03-04 13:37
 
-import os
 
 import numpy as np
 from load_data import train_df, test_df
@@ -16,7 +15,7 @@ import matplotlib.pyplot as plt
 from albert_zh.extract_feature import BertVector
 
 # 读取文件并进行转换
-bert_model = BertVector(pooling_strategy="REDUCE_MEAN", max_seq_len=100)
+bert_model = BertVector(pooling_strategy="REDUCE_MEAN", max_seq_len=200)
 print('begin encoding')
 f = lambda text: bert_model.encode([text])["encodes"][0]
 train_df['x'] = train_df['text'].apply(f)
@@ -47,8 +46,8 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 # 模型训练以及评估
-history = model.fit(x_train, y_train, validation_data=(x_test, y_test), batch_size=8, epochs=20)
-model.save('visit_classify.h5')
+history = model.fit(x_train, y_train, validation_data=(x_test, y_test), batch_size=8, epochs=50)
+model.save('event_type_classify.h5')
 print(model.evaluate(x_test, y_test))
 
 # 绘制loss和acc图像
@@ -59,8 +58,8 @@ plt.plot(range(epochs), history.history['val_loss'], label='val_loss')
 plt.legend()
 
 plt.subplot(2, 1, 2)
-epochs = len(history.history['acc'])
-plt.plot(range(epochs), history.history['acc'], label='acc')
-plt.plot(range(epochs), history.history['val_acc'], label='val_acc')
+epochs = len(history.history['accuracy'])
+plt.plot(range(epochs), history.history['accuracy'], label='accuracy')
+plt.plot(range(epochs), history.history['val_accuracy'], label='val_accuracy')
 plt.legend()
 plt.savefig("loss_acc.png")

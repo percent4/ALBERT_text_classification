@@ -20,11 +20,11 @@ def read_txt_file(file_path):
     return labels, texts
 
 
-file_path = 'data/train.txt'
+file_path = './data/train.txt'
 labels, texts = read_txt_file(file_path)
 train_df = pd.DataFrame({'label': labels, 'text': texts})
 
-file_path = 'data/test.txt'
+file_path = './data/test.txt'
 labels, texts = read_txt_file(file_path)
 test_df = pd.DataFrame({'label': labels, 'text': texts})
 
