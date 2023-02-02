@@ -97,14 +97,14 @@ def get_province(path):
 
 if __name__ == '__main__':
 
-    path = r'D:\PycharmProjects\ALBERT_text_classification_other\doc2docx\上海\上海市交通委员会关于征集2020年度本市交通运输行业重点节能低碳技术的通知(FBMCLI.14.1658519).docx'
+    path = r'/\doc2docx\上海\上海市交通委员会关于征集2020年度本市交通运输行业重点节能低碳技术的通知(FBMCLI.14.1658519).docx'
 
     doc = getText(path)
     print(doc)
 # --------------------------------------------------------------------
     doc = Document(path)
 
-    file = r'D:\PycharmProjects\ALBERT_text_classification_other\doc2docx\上海'
+    file = r'/\doc2docx\上海'
     # i=1
     # for root, dirs, files in os.walk(file):
     #     for file in files:
@@ -141,7 +141,7 @@ if __name__ == '__main__':
     # head,context = get_titcon(doc,head,context)
     # print(head)
 
-    # file = r'D:\PycharmProjects\ALBERT_text_classification_other\doc2docx\上海'
+    # file = r'D:\PycharmProjects\other\doc2docx\上海'
     # i=1
     # for root, dirs, files in os.walk(file):
     #     for file in files:
@@ -161,12 +161,12 @@ if __name__ == '__main__':
     #
     # print(df)
     #
-    # df.to_excel(r'D:\PycharmProjects\ALBERT_text_classification_other\test_data\广西壮族自治区.xlsx', index=False)
+    # df.to_excel(r'D:\PycharmProjects\other\test_data\广西壮族自治区.xlsx', index=False)
 
 
 
 #真
-    # path2 = r'D:\PycharmProjects\ALBERT_text_classification_other\doc2docx'
+    # path2 = r'D:\PycharmProjects\other\doc2docx'
     #
     # for root, dirs, files in os.walk(path2):
     #     # for file in files:
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     #         print('这个是dir：'+dir)
     #
     #         locals()['df_{}'.format(dir)]= get_province(file)
-    #         locals()['df_{}'.format(dir)].to_excel(r'D:\PycharmProjects\ALBERT_text_classification_other\test_data\{}.xlsx'.format(dir), index=False)
+    #         locals()['df_{}'.format(dir)].to_excel(r'D:\PycharmProjects\other\test_data\{}.xlsx'.format(dir), index=False)
     #
 
             # for x_path in range(file):
@@ -214,7 +214,7 @@ if __name__ == '__main__':
     # df = pd.DataFrame({'title': head, "content": context})
     # print(df)
     #
-    # df.to_excel(r'D:\PycharmProjects\ALBERT_text_classification_other\test_data\test.xlsx', index=False)
+    # df.to_excel(r'D:\PycharmProjects\other\test_data\test.xlsx', index=False)
 # -----------------------------------------------------------------------------------------
 #最后没用的几段
     # for i in range(len(doc.paragraphs)):
@@ -239,4 +239,4 @@ if __name__ == '__main__':
     #print(str)
 # -----------------------------------------------------------------------------------------
 
-    #df.to_excel(r'D:\PycharmProjects\ALBERT_text_classification_other\test_data\test.xlsx', index=False)
+    #df.to_excel(r'D:\PycharmProjects\other\test_data\test.xlsx', index=False)
